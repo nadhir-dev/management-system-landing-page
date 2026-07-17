@@ -3,24 +3,86 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Semantic colors */
+  --color-secondary: #f5f5f5;
+  --color-tertiary: #52525b;
+
+  /* Brand (emerald) palette */
+  --color-brand-secondary: #059669;
+  --color-brand-50: #ecfdf5;
+  --color-brand-600: #059669;
+  --color-brand-solid: #047857;
+  --color-brand-tertiary-alt: #10b981;
+
+  /* Footer surface (inverted: light bg, dark text) */
+  --color-footer: #f8fafc;
+  --color-footer-foreground: #111827;
+
+  /* Utility scales */
+  --color-utility-gray-200: #e5e7eb;
+  --color-utility-gray-300: #d1d5db;
+  --color-utility-gray-400: #9ca3af;
+  --color-utility-neutral-200: #e5e7eb;
+  --color-utility-neutral-300: #d4d4d4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+
+  --color-brand-secondary: var(--color-brand-secondary);
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-solid: var(--color-brand-solid);
+  --color-brand-tertiary-alt: var(--color-brand-tertiary-alt);
+
+  --color-footer: var(--color-footer);
+  --color-footer-foreground: var(--color-footer-foreground);
+
+  --color-utility-gray-200: var(--color-utility-gray-200);
+  --color-utility-gray-300: var(--color-utility-gray-300);
+  --color-utility-gray-400: var(--color-utility-gray-400);
+  --color-utility-neutral-200: var(--color-utility-neutral-200);
+  --color-utility-neutral-300: var(--color-utility-neutral-300);
+
+  --font-sans: var(--font-poppins), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --color-secondary: #18181b;
+    --color-tertiary: #a1a1aa;
+
+    --color-brand-secondary: #34d399;
+    --color-brand-50: #064e3b;
+    --color-brand-600: #34d399;
+    --color-brand-solid: #10b981;
+    --color-brand-tertiary-alt: #6ee7b7;
+
+    --color-footer: #00000090;
+    --color-footer-foreground: #1f2937;
+
+    --color-utility-gray-200: #27272a;
+    --color-utility-gray-300: #3f3f46;
+    --color-utility-gray-400: #71717a;
+    --color-utility-neutral-200: #27272a;
+    --color-utility-neutral-300: #3f3f46;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
 }

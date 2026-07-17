@@ -1,200 +1,118 @@
-import type { FC, HTMLAttributes } from "react";
-import {
-  ChartBreakoutSquare,
-  MessageChatCircle,
-  ZapFast,
-} from "@untitledui/icons";
-import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { CheckItemText } from "@/components/marketing/pricing-sections/base-components/pricing-tier-card";
-import { cx } from "@/utils/cx";
-
-const AlternateImageMockup: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+export default function Footer() {
   return (
-    <div
-      className={cx(
-        "size-full rounded-[9.03px] bg-primary p-[0.9px] shadow-modern-mockup-outer-md ring-[0.56px] ring-utility-neutral-300 ring-inset md:rounded-[20.08px] md:p-0.5 md:shadow-modern-mockup-outer-lg md:ring-[1.25px] lg:absolute lg:w-auto lg:max-w-none",
-        props.className,
-      )}
-    >
-      <div className="size-full rounded-[7.9px] bg-primary p-0.5 shadow-modern-mockup-inner-md md:rounded-[17.57px] md:p-[3.5px] md:shadow-modern-mockup-inner-lg">
-        <div className="relative size-full overflow-hidden rounded-[6.77px] ring-[0.56px] ring-utility-neutral-200 md:rounded-[15.06px] md:ring-[1.25px]">
-          {props.children}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const FeaturesAlternatingLayout01 = () => {
-  return (
-    <section className="flex flex-col gap-12 overflow-hidden bg-primary py-16 sm:gap-16 md:gap-20 md:py-24 lg:gap-24">
-      <div className="mx-auto w-full max-w-container px-4 md:px-8">
-        <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <span className="text-sm font-semibold text-brand-secondary md:text-md">
-            Features
-          </span>
-          <h2 className="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
-            Beautiful analytics to grow smarter
-          </h2>
-          <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
-            Powerful, self-serve product and growth analytics to help you
-            convert, engage, and retain more users. Trusted by over 4,000
-            startups.
+    <footer className="px-6 md:px-16  lg:px-24 xl:px-32 pt-8 w-full bg-footer text-footer-foreground/80 dark:text-tertiary ">
+      <div className="flex flex-col  md:flex-row justify-between w-full gap-10 border-b border-footer-foreground/10 pb-6">
+        <div className="md:max-w-96 flex flex-col gap-6">
+          ICON
+          <p className=" text-sm">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry &apos s standard dummy
+            text ever since the 1500s, when an unknown printer took a galley of
+            type and scrambled it to make a type specimen book.
           </p>
         </div>
-      </div>
-
-      <div className="mx-auto flex w-full max-w-container flex-col gap-12 px-4 sm:gap-16 md:gap-20 md:px-8 lg:gap-24">
-        <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
-          <div className="max-w-xl flex-1 self-center">
-            <FeaturedIcon
-              icon={MessageChatCircle}
-              size="lg"
-              color="brand"
-              theme="light"
-            />
-            <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">
-              Share team inboxes
+        <div className="flex-1 flex items-start md:justify-end gap-20">
+          <div>
+            <h2 className="font-semibold mb-5 light:text-footer-foreground">
+              Company
             </h2>
-            <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-              Whether you have a team of 2 or 200, our shared team inboxes keep
-              everyone on the same page and in the loop.
-            </p>
-            <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
-              {[
-                "Leverage automation to move fast",
-                "Always give customers a human to chat to",
-                "Automate customer support and close leads faster",
-              ].map((feat) => (
-                <CheckItemText
-                  key={feat}
-                  size="md"
-                  iconStyle="outlined"
-                  color="primary"
-                  text={feat}
-                />
-              ))}
+            <ul className="text-sm space-y-2">
+              <li className="hover:text-footer-foreground dark:hover:text-white">
+                <a href="#">Home</a>
+              </li>
+              <li className="hover:text-footer-foreground dark:hover:text-white">
+                <a href="#features">Features</a>
+              </li>
+              <li className="hover:text-footer-foreground dark:hover:text-white">
+                <a href="#metrics">Metrics</a>
+              </li>
+              <li className="hover:text-footer-foreground dark:hover:text-white">
+                <a href="#faq">FAQ</a>
+              </li>
             </ul>
           </div>
-
-          <div className="relative w-full flex-1 lg:h-128">
-            <AlternateImageMockup className="lg:left-0">
-              {/* Light mode image (hidden in dark mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
-                className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
-              />
-              {/* Dark mode image (hidden in light mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
-                className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
-              />
-            </AlternateImageMockup>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
-          <div className="max-w-xl flex-1 self-center lg:order-last">
-            <FeaturedIcon
-              icon={ZapFast}
-              size="lg"
-              color="brand"
-              theme="light"
-            />
-            <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">
-              Deliver instant answers
-            </h2>
-            <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-              An all-in-one customer service platform that helps you balance
-              everything your customers need to be happy.
-            </p>
-            <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
-              {[
-                "Keep your customers in the loop with live chat",
-                "Embed help articles right on your website",
-                "Customers never have to leave the page to find an answer",
-              ].map((feat) => (
-                <CheckItemText
-                  key={feat}
-                  size="md"
-                  iconStyle="outlined"
-                  color="primary"
-                  text={feat}
-                />
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative w-full flex-1 lg:h-128">
-            <AlternateImageMockup className="lg:right-0">
-              {/* Light mode image (hidden in dark mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
-                className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
-              />
-              {/* Dark mode image (hidden in light mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
-                className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
-              />
-            </AlternateImageMockup>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-10 md:gap-20 lg:grid-cols-2 lg:gap-24">
-          <div className="max-w-xl flex-1 self-center">
-            <FeaturedIcon
-              icon={ChartBreakoutSquare}
-              size="lg"
-              color="brand"
-              theme="light"
-            />
-            <h2 className="mt-5 text-display-xs font-semibold text-primary md:text-display-sm">
-              Manage your team with reports
-            </h2>
-            <p className="mt-2 text-md text-tertiary md:mt-4 md:text-lg">
-              Measure what matters with Untitled's easy-to-use reports. You can
-              filter, export, and drilldown on the data in a couple clicks.
-            </p>
-            <ul className="mt-8 flex flex-col gap-4 pl-2 md:gap-5 md:pl-4">
-              {[
-                "Filter, export, and drilldown on the data quickly",
-                "Save, schedule, and automate reports to your inbox",
-                "Connect the tools you already use with 100+ integrations",
-              ].map((feat) => (
-                <CheckItemText
-                  key={feat}
-                  size="md"
-                  iconStyle="outlined"
-                  color="primary"
-                  text={feat}
-                />
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative w-full flex-1 lg:h-128">
-            <AlternateImageMockup className="lg:left-0">
-              {/* Light mode image (hidden in dark mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp"
-                className="size-full object-contain lg:w-auto lg:max-w-none dark:hidden"
-              />
-              {/* Dark mode image (hidden in light mode) */}
-              <img
-                alt="Dashboard mockup showing application interface"
-                src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp"
-                className="size-full object-contain not-dark:hidden lg:w-auto lg:max-w-none"
-              />
-            </AlternateImageMockup>
+          <div>
+            <h2 className="font-semibold mb-5 ">Get in touch</h2>
+            <div className="text-sm space-y-2 ">
+              <p className="select-all">+1-212-456-7890</p>
+              <p className="select-all">contact@example.com</p>
+              <div className="flex mt-1 items-center gap-4    light:text-footer-foreground/60">
+                <a
+                  href="#"
+                  className="hover:-translate-y-0.5 dark:hover:text-white  transition-all duration-300"
+                >
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="hover:-translate-y-0.5 dark:hover:text-white transition-all duration-300"
+                >
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M16 11.37a4 4 0 1 1-7.914 1.173A4 4 0 0 1 16 11.37m1.5-4.87h.01"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="hover:-translate-y-0.5 dark:hover:text-white transition-all duration-300"
+                >
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>{" "}
+            </div>
           </div>
         </div>
       </div>
-    </section>
+      <p className="pt-4 text-center  light:text-footer-foreground text-xs md:text-sm pb-5">
+        Copyright {new Date().getFullYear()} © <a href="#">Company</a>. All
+        Right Reserved.
+      </p>
+    </footer>
   );
-};
+}
